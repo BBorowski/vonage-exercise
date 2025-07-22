@@ -1,0 +1,16 @@
+FROM ruby:3.0
+LABEL maintainer="John Doe"
+WORKDIR /app
+COPY . /app
+RUN bundle install
+CMD [
+    {%- if startup_command -%}
+        "
+        {%- for element in startup_command.split() -%}
+            {{ element }}
+            {%- if loop.nextitem is defined %}", "{% endif -%}
+        {% endfor -%}
+        "
+    {%- endif -%}
+    ] # Startup command for {{ name if name else '' }}.
+
