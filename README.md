@@ -2,7 +2,7 @@
 ## Running
 To run the script a reasonably recent version of Python is needed. 3.8+ should suffice. Required modules are specified in `requirements.txt`
 
-When run directly the scripts will take input from the file `project.yaml` and save it to `Dockerfile`. When calling the script's main function you can provide optionally arguments to use different files:
+When run directly the scripts will take input from the file `project.yaml` and save the output to `Dockerfile`. When calling the script's main function you can provide optionally arguments to use different files:
 ```
 def main(input_file="project.yaml",
          output_file="Dockerfile",
